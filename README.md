@@ -1,8 +1,7 @@
 # Hikey R-LCR + OP-TEE manifest
 
-This repository contains patches, local manifest files and scripts
-that can be used to build a Hikey R-LCR build that includes OP-TEE
-feature with AOSP 4.4 kernel.
+This repository contains local manifest files that can be used to build
+a Hikey R-LCR build that includes OP-TEE feature with AOSP 4.4 kernel.
 
 To use OPTEE with AOSP master for Hikey, please check instructions [HERE][3]
 
