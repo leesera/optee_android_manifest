@@ -4,6 +4,8 @@ This repository contains patches, local manifest files and scripts
 that can be used to build a Hikey R-LCR build that includes OP-TEE
 feature with AOSP 4.4 kernel.
 
+To use OPTEE with AOSP master for Hikey, please check instructions [here][3]
+
 ## 1. References
 
 * [Hikey R-LCR build instructions][1]
@@ -37,35 +39,24 @@ $ wget https://dl.google.com/dl/android/aosp/linaro-hikey-20160226-67c37b1a.tgz
 $ tar xzf linaro-hikey-20160226-67c37b1a.tgz
 $ ./extract-linaro-hikey.sh
 ```
-### 3.5. Configure the environment for Android
+### 3.5. Apply patches for optee on hikey device config:
 ```bash
-source ./build/envsetup.sh
-lunch hikey-userdebug
+$ ./android-patchsets/hikey-optee
 ```
-
-### 3.6. Download the Linaro toolchain
-The Linux kernel and Optee trusted apps are built using the Linaro gcc
-toolchain.  Use this helper script to download this for you:
+### 3.6. Apply patches for optee on hikey AOSP 4.4 kernel:
 ```bash
-$ ./optee/get_toolchain.sh
+$ ./android-patchsets/hikey-optee
 ```
-
-### 3.7. Build the userspace libraries and trusted apps:
+### 3.7. Configure the environment for Android
 ```bash
-$ ./optee/build_ta.sh hikey optee/android_optee_examples.cfg
+$ source ./build/envsetup.sh
+$ lunch hikey-userdebug
+$ export TARGET_BUILD_KERNEL=true
+$ export TARGET_BOOTIMAGE_USE_FAT=true
 ```
-
-### 3.8. Build the Linux kernel
-There is also a helper script to build the Linux kernel.  Android
-typically uses pre-built kernels, so it is necessary to build this
-manually.
-```bash
-$ ./optee/build_kernel.sh
-```
-
 ### 3.9. Run the rest of the android build, For an 8GB board, use:
 ```bash
-make -j32
+$ make -j32
 ```
 For a 4GB board, use:
 ```bash
@@ -98,6 +89,14 @@ the `fip.bin` file will be under
 ```
 arm-trusted-firmware/build/hikey/release/fip.bin
 ```
+## 6. Known issues
+There are some known issues:
+1. fip.bin is not the latest version, and would cause xtest 1013.x failed
+2. xtest 1008.x failure is investigation.
+3. Some projects are still in personal repository, the changes will be upstreamed soon
+4. master version optee projects are used, will changed to stable version when released
+Also bugs and comments are welcome.
 
 [1]: https://source.android.com/source/devices.html
 [2]: https://github.com/OP-TEE/optee_os/blob/master/README.md
+[3]: https://github.com/linaro-swg/optee_android_manifest
