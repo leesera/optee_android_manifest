@@ -1,30 +1,30 @@
-# Android+OP-TEE manifest
+# Hikey R-LCR + OP-TEE manifest
 
-This repository contains a local manifest that can be used to build an
-AOSP build that includes OP-TEE for the hikey board.
+This repository contains patches, local manifest files and scripts
+that can be used to build a Hikey R-LCR build that includes OP-TEE
+feature with AOSP 4.4 kernel.
 
 ## 1. References
 
-* [AOSP Hikey build instructions][1]
+* [Hikey R-LCR build instructions][1]
 
 ## 2. Prerequisites
 
 * Should already be able to build aosp.  Distro should have necessary
-  packages installed, and the repo tool should be installed.  Note
-  that AOSP 6 needs to be built with Java 1.8.  Also make sure that
-  the `mtools` package is installed, which is needed to make the hikey
-  boot image.
+  packages installed, and the repo tool should be installed.
+  Please note that the `mtools` package is installed, which is needed
+  to make the hikey boot image.
 
 ## 3. Build steps
 
 ### 3.1. In an empty directory, clone the tree:
 ```bash
-$ repo init -u https://android.googlesource.com/platform/manifest -b master
+$ repo init -u https://android.googlesource.com/platform/manifest -b android-6.0.1_r43
 ```
 ### 3.2. Add the OP-TEE overlay:
 ```bash
 $ cd .repo
-$ git clone https://github.com/linaro-swg/optee_android_manifest.git local_manifests
+$ git clone https://github.com/liuyq/optee_android_manifest -b hikey-marshmallow local_manifests
 $ cd ..
 ```
 ### 3.3. Sync

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="linaro-android" fetch="git://android.git.linaro.org/" review="android-review.linaro.org" />
+  <!-- Repositories -->
+
+  <project path="device/linaro/hikey" name="device/linaro/hikey" revision="master" groups="device,hikey" />
+  <project path="device/linaro/hikey-kernel" name="device/linaro/hikey-kernel" revision="master" groups="device,hikey" />
+
+  <project path="android-patchsets" name="android-patchsets" revision="hikey-optee" remote="linaro-android"/>
+  <project path="device/linaro/build" name="device/linaro/common" remote="linaro-android" revision="linaro-marshmallow"/>
+  <project path="kernel/linaro/hisilicon" name="kernel/hikey-linaro" revision="android-hikey-linaro-4.4" remote="aosp" groups="device,hikey" />
+</manifest>
