@@ -3,6 +3,8 @@
 This repository contains a local manifest that can be used to build an
 AOSP build that includes OP-TEE for the hikey board.
 
+To integrate OP-TEE with Marshmallow for Hikey build, please check [HERE][3]
+
 ## 1. References
 
 * [AOSP Hikey build instructions][1]
@@ -101,3 +103,4 @@ arm-trusted-firmware/build/hikey/release/fip.bin
 
 [1]: https://source.android.com/source/devices.html
 [2]: https://github.com/OP-TEE/optee_os/blob/master/README.md
+[3]: https://github.com/liuyq/optee_android_manifest/tree/hikey-marshmallow
