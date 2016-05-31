@@ -4,7 +4,7 @@ This repository contains patches, local manifest files and scripts
 that can be used to build a Hikey R-LCR build that includes OP-TEE
 feature with AOSP 4.4 kernel.
 
-To use OPTEE with AOSP master for Hikey, please check instructions [here][3]
+To use OPTEE with AOSP master for Hikey, please check instructions [HERE][3]
 
 ## 1. References
 
@@ -66,8 +66,10 @@ make -j32 TARGET_USERDATAIMAGE_4GB=true
 ## 4. Flashing the image
 The instructions for flashing the image can be found in detail under
 `device/linaro/hikey/install/README` in the tree.
+
 1. Jumper links 1-2 and 3-4, leaving 5-6 open, and reset the board.
 2. Invoke
+
 ```bash
 ./device/linaro/hikey/installer/flash-all.sh /dev/ttyUSBn
 ```
@@ -91,10 +93,12 @@ arm-trusted-firmware/build/hikey/release/fip.bin
 ```
 ## 6. Known issues
 There are some known issues:
+
 1. fip.bin is not the latest version, and would cause xtest 1013.x failed
 2. xtest 1008.x failure is investigation.
 3. Some projects are still in personal repository, the changes will be upstreamed soon
 4. master version optee projects are used, will changed to stable version when released
+
 Also bugs and comments are welcome.
 
 [1]: https://source.android.com/source/devices.html
