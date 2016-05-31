@@ -45,7 +45,7 @@ $ ./android-patchsets/hikey-optee
 ```
 ### 3.6. Apply patches for optee on hikey AOSP 4.4 kernel:
 ```bash
-$ ./android-patchsets/hikey-optee
+$ ./android-patchsets/hikey-optee-kernel-4.4
 ```
 ### 3.7. Configure the environment for Android
 ```bash
