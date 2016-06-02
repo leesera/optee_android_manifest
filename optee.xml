@@ -6,6 +6,6 @@
   <project path="external/optee_client" name="OP-TEE/optee_client" revision="master" remote="github-optee" />
   <project path="external/optee_hello_world" name="liuyq/lcu14_optee_hello_world" revision="master" remote="github-optee" />
   <project path="optee" name="d3zd3z/optee_android_tools" revision="master" remote="github-optee" />
-  <project path="optee/optee_os" name="OP-TEE/optee_os" revision="master" remote="github-optee" />
+  <project path="optee/optee_os" name="liuyq/optee_os" revision="master" remote="github-optee" />
 
 </manifest>
